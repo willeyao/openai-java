@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.chat</groupId>
+    <artifactId>openai-sdk</artifactId>
+    <version>0.18.4</version>
+    <packaging>pom</packaging>
+
+    <url>https://github.com/theokanning/openai-java</url>
+
+    <modules>
+        <module>openai-api</module>
+        <module>openai-service</module>
+        <module>openai-client</module>
+        <module>openai-example</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-ai-openai-assistants</artifactId>
+            <version>1.0.0-beta.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <scm>
+        <url>https://github.com/theokanning/openai-java</url>
+        <connection>scm:git:https://github.com/theokanning/openai-java.git</connection>
+        <developerConnection>scm:git:https://github.com/theokanning/openai-java.git</developerConnection>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>https://www.mit.edu/~amini/LICENSE.md</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>theokanning</id>
+            <name>Theo Kanning</name>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <junit.version>5.8.2</junit.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>codeup-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2393405-release-crDqS5/</url>
+        </repository>
+        <snapshotRepository>
+            <id>codeup-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2393405-snapshot-QhRpNr/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>codeup-releases</id>
+            <url>
+                https://packages.aliyun.com/maven/repository/2393405-snapshot-QhRpNr
+            </url>
+        </repository>
+        <repository>
+            <id>codeup-snapshots</id>
+            <url>
+                https://packages.aliyun.com/maven/repository/2393405-release-crDqS5
+            </url>
+        </repository>
+    </repositories>
+</project>
